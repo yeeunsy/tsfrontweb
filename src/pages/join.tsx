@@ -3,7 +3,7 @@ import React from "react";
 function join () {
     return (
         <div className="joinCol">
-            <h4>text</h4>
+            <h4>Text</h4>
             <div>
                 이름
             </div>
