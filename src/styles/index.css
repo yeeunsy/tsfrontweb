@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+Link {
+  text-decoration: none;
+  color: black;
+}
+
+.MainMenu {
+  height: 5rem;
+  border-bottom: 0.5px solid gray;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+.menuElm{
+  text-decoration: none;
+  color: black;
+}
