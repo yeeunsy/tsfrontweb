@@ -1,10 +1,97 @@
 body {
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* 
+.adBtn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.adLink {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.adLink:hover {
+  color: black;
+} */
+
+.card {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15%;
+  height: 15%;
+  margin: 1.5vw 1.5vw 1.5vw 1.5vw;
+}
+
+.card-text {
+  border: none;
+  border: 0;
+}
+
+.prList {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.loginCol, .joinCol{
+  display: grid;
+  justify-content: center;
+  background-color: white;
+  padding: 40px 0 100px 0;
+  margin: 0 35vw 0 35vw;
+  border: solid 1px #e0e0e0;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.submitBtn {
+  display: block;
+  width: 100%;
+  background-color: #3c4b73;
+  color: white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 45px;
+  border: none;
+}
+.submitBtn:hover {
+  background-color: #293266;
+}
+
+.ipInfo {
+  height: 50px;
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+.imgUl{
+  width: 100vw;
+  white-space: nowrap;
+}
+
+.imgUl > .imgLi{
+  width: 80vw;
+  margin: 0 10vw 0 10vw;
+  display: inline-block;
+}
+
+.tagName{
+  font-size: 40px;
 }
 
 code {
@@ -12,15 +99,63 @@ code {
     monospace;
 }
 
-Link {
+.pr{
+  padding: 20px;
+  font-size: 18px;
+}
+
+.footerContainer {
+  border-top: 0.5px solid #9b9898;
+  padding: 60px;
+  width: 100%;
+  color: #747171;
+}
+
+.comnb {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.logo {
+  margin-right: 300px;
+}
+
+.menuNode{
+  margin-top: 3px;
+  list-style: none;
+  grid-template-columns: 4fr 1fr;
+  text-align: center;
+}
+.menuHub{
+  display: inline-block;
+  margin:0 10px 0 10px;
+  vertical-align: middle;
+}
+
+.open{
+  margin-bottom: 40px;
+}
+
+.footerInfo{
+  padding-top: 20px;
+}
+
+.footElm{
   text-decoration: none;
-  color: black;
+  color: #747171;
+  margin-right: 40px;
+}
+
+.footElm:hover {
+  color: #747171;
 }
 
 .MainMenu {
-  height: 5rem;
-  border-bottom: 0.5px solid gray;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 72px;
+  border-bottom: 0.5px solid rgb(216, 216, 216);
 }
 
 header {
@@ -30,4 +165,86 @@ header {
 .menuElm{
   text-decoration: none;
   color: black;
+}
+
+.menuElm:hover {
+  color: black;
+}
+
+.goal{
+  font-weight: bold;
+}
+
+li{
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.bsnsBox > table {
+  border-collapse: collapse;
+  border: solid 0.5px #9b9898;
+}
+
+table {
+  width: 100%;
+  border-top: 1px solid #9b9898;
+  border-collapse: collapse;
+  font-size: 20px;
+  color: #707070;
+}
+th, td {
+  border-bottom: 1px solid #9b9898;
+  padding: 10px;
+}
+
+.privacyForm{
+  position: relative;
+  left: 180px;
+  width: 80%;
+  font-size: 20px;
+}
+
+.temsofUse {
+  position: relative;
+  left: 180px;
+  width: 80%;
+  font-size: 20px;
+}
+
+.title {
+  background-color: #eeeee4;
+  text-align: center;
+  padding: 20px;
+  width: 300px;
+  font-weight: bold;
+  color: black;
+}
+
+.bsnsFooter{
+  font-size: 20px;
+  padding: 30px;
+  color: #707070;
+}
+
+h1, h2, h3, h4{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin: 4vw 0 4vw 0;
+}
+
+.BtnDiv {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bnImg {
+  width: 80vw;
+  margin: 0 10vw 0 10vw;
+  display: flex;
+}
+
+.bnSmr {
+  margin-bottom: 25px;
 }
