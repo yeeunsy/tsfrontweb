@@ -1,4 +1,5 @@
 import {  Route, Routes } from 'react-router-dom'
+import Head from 'next/head'
 import Join from './pages/join'
 import Layout from './layout'
 import BusinessInfo from './pages/businessInfo'
@@ -9,6 +10,7 @@ import DetailInfo from './pages/detailInfo'
 import express from 'express'
 import bodyParser from 'body-parser';
 import path from 'path';
+
 
 class SessionApp {
 }
