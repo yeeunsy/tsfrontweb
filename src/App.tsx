@@ -5,6 +5,7 @@ import BusinessInfo from './pages/businessInfo'
 import Privacy from './pages/privacy'
 import TermsofUse from './pages/termsofuse'
 import LoginMain from './pages/loginMain'
+import DetailInfo from './pages/detailInfo'
 import express from 'express'
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -22,6 +23,7 @@ function App() {
       <Route path='/businessInfo' element={<BusinessInfo />}/>
       <Route path='/privacy' element={<Privacy />}/>
       <Route path='/termsofUse' element={<TermsofUse />}/>
+      <Route path='/detailInfo' element={<DetailInfo />}/>
     </Routes>
   )
 }

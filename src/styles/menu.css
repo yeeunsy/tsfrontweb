@@ -1,0 +1,24 @@
+.menuForm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-bottom: 0.5px solid rgb(216, 216, 216);
+  }
+  
+  .mainMenu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menuHub{
+    list-style: none;
+    display: inline-block;
+  }
+  .menuElm{
+    text-decoration: none;
+    color: black;
+  }
+  .menuElm:hover {
+    color: black;
+  }

@@ -1,0 +1,68 @@
+.footerContainer {
+    border-top: 0.5px solid #9b9898;
+    color: #747171;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    margin-top: 40px;
+  }
+  
+  .comnb {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .comInfo{
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .open{
+    margin-bottom: 40px;
+  }
+  
+  .footerInfo{
+    padding-top: 20px;
+  }
+  
+  .footElm{
+    text-decoration: none;
+    color: #747171;
+    margin-right: 40px;
+  }
+  
+  .footElm:hover {
+    color: #747171;
+  }
+
+  .bsnsFooter{
+    font-size: 20px;
+    padding: 30px;
+    color: #707070;
+  }
+  h1, h2, h3, h4{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 4vw 0 4vw 0;
+  }
+  .mainHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4vw 0 4vw 0;
+  }
+  
+  .bnImg {
+    width: 70vw;
+    margin-bottom: 4vw;
+  }
+  .bnSmr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10%;
+  }

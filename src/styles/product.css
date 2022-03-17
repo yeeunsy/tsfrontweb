@@ -1,0 +1,57 @@
+.imgCard {
+  display: inline-block;
+  width: 15vw;
+  height: 20vw;
+  object-fit: fill;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.prLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 47px;
+}
+
+.buyPr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about {
+  text-decoration: none;
+  color: #0d2e4a;
+  background-color: #fbecdf;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutPr {
+  display: flex;
+  width: 4vw 4vw 4vw 4vw;
+  justify-content: space-between;
+}
+
+.detailAbout {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.prCard {
+  display: flex;
+  flex-direction: column;
+}
