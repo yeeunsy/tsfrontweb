@@ -1,41 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import { ICurrentUserData, ISignupData, ISignupVars } from "../interfaces";
 
-type User = {
-    name: string;
-    id: string;
-    pw: string;
-}
+const SIGNUP = gql`
+  mutation signUpUserByEveryone($ID: String!, $password: String!, $name: String!) {
+    signUpUserByEveryone(loginId: $ID, password: $password, phone: $name)
+  }
+`;
 
-function Join() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [pw, setPw] = useState('');
+function Signup() {
+  const [ID, setID] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [signup, signupResult] = useMutation<ISignupData, ISignupVars>(SIGNUP);
+  
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    signup({ variables: { ID, password, name } });
+    setID("");
+    setPassword("");
+    setName("");
+  }
+   
 
-    // const onSubmit = (e) => {
-    // }
-
-    return (
-        <>
-            <h4>Itez에 오신걸 환영합니다.</h4>
+  return (
+    <>
+        <h4>Itez에 오신걸 환영합니다.</h4>
             <div className="joinForm">
-                <div className="joinCol">
-                    <div>
+                <form onSubmit={handleSubmit}>
+                    <div className="joinCol">
+                        <div>
                         이름
-                        <input type="text" name='name' className="form-control ipInfo" placeholder="이름(실명)을 입력해주세요." onChange={(e) => setName(e.target.value)} value={name} />
-                    </div>
-                    <div>
+                        <input className="form-control ipInfo" value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        type="text"
+                        placeholder="Name"/>
+                        </div>
+                        <div>
                         이메일
-                        <input type="text" name='id' className="form-control ipInfo" placeholder="example@gmail.com" onChange={(e)=>setEmail(e.target.value)} value={email} />
-                    </div>
-                    <div>
+                        <input className="form-control ipInfo" value={ID}
+                        onChange={(e) => setID(e.target.value)}
+                        type="text"
+                        placeholder="ID"/>
+                        </div>
+                        <div>
                         비밀번호
-                        <input type="password" name='pw' className="form-control ipInfo" placeholder="영어+숫자 조합 8자리 이상 입력해주세요." onChange={(e)=>setPw(e.target.value)} value={pw} />
+                        <input className="form-control ipInfo"value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        placeholder="PW"/>
+                        </div>
+                        <button className="joinBtn submitBtn" type="submit">회원가입</button>
                     </div>
-                    <button className="joinBtn submitBtn" type="submit">회원가입</button>
-                </div>
+                </form>
             </div>
-        </>
+    </>
     );
 }
 
-export default Join;
+export default Signup;

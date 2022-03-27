@@ -1,38 +1,68 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
-// interface PropTypes {
-//     id: string;
-//     name: string;
-//     pw: string;
-//     setId: (id: string) => void;
-//     setPw: (pw: string) => void;
-//     login: () => void;
-//     adminLogin: () => void;
-// }
-
-// const [email, setEmail] = useState('');
-// const [pw, setPw] = useState('');
+import React, { useState, useEffect } from "react";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import { ICurrentUserData, ILoginData, ILoginVars } from "../interfaces";
+import { currentUserVar, GET_CURRENT_USER } from "../apollo/cache";
 
 function LoginMain () {
+    
+    const LOGIN = gql`
+      mutation signInAdminByEveryone($ID: String!, $password: String!) {
+        signInAdminByEveryone(id: $ID, password: $password) {
+          accessToken
+        }
+      }
+    `;
+
+    const [ID, setID] = useState("");
+      const [password, setPassword] = useState("");
+      const currentUser = useQuery<ICurrentUserData>(GET_CURRENT_USER);
+      const [login, loginResult] = useMutation<ILoginData, ILoginVars>(LOGIN);
+    
+      useEffect(() => {
+        if (loginResult.data?.login) {
+          currentUserVar(loginResult.data?.login);
+          alert("로그인에 성공했습니다.");
+        } else if (loginResult.data?.login === null)
+          alert("아이디 또는 비밀번호를 잘못 입력했습니다.");
+      }, [loginResult.data, history]);
+    
+      function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        e.stopPropagation();
+        login({ variables: { ID, password } });
+        setID("");
+        setPassword("");
+      }
+
+      const { loading, error, data } = useQuery(LOGIN);
+      if (loading) return <p>회원 조회 중</p>;
+      if (error) return <p>회원이 없습니다.</p>;
 
     return (
     <>
         <h4>로그인</h4>
         <div className="loginForm">
-            <div>
+            <form onSubmit={handleSubmit}>
             <div className="loginCol">
                 <div>
-                    이메일<br/>
-                    <input name="email" type="text" className="ipInfo" placeholder="example@gmail.com"></input>
+                    아이디<br/>
+                    <input className="ipInfo"  value={ID}
+                        onChange={(e) => setID(e.target.value)}
+                        type="text"
+                        placeholder="ID"></input>
                 </div>
                 <div>
                     비밀번호<br/>
-                    <input name="pw" type='password' className="ipInfo" placeholder="비밀번호를 입력해주세요."></input>
+                    <input className="ipInfo" value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        placeholder="Choose a safe password"></input>
                 </div>
-                    <button className="loginBtn submitBtn" type="submit">로그인</button>
+                    <button className="loginBtn submitBtn" type="submit"  onClick={
+          () => login({ variables: { ID, password } })
+        }>로그인</button>
             </div>
-            </div>
+            </form>
         </div>
     </>
     );
