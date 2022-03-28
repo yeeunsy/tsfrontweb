@@ -22,7 +22,6 @@ function Signup() {
     setPassword("");
     setName("");
   }
-   
 
   return (
     <>

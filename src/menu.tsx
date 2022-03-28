@@ -16,7 +16,7 @@ function Menu () {
         <header className="menuForm">
             <Link to="/" className="logo"><img src={itezFront_logo}></img></Link>
                 <ul className="mainMenu">
-                    <li className="menuHub"><Link to="/" className="menuElm">공동 구매</Link></li>
+                    <li className="menuHub"><Link to="/groupBuying" className="menuElm">공동 구매</Link></li>
                     {user ? (
                     <>
                     <Link to="/logout">로그아웃</Link>{" "}

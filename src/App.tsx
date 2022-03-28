@@ -1,5 +1,4 @@
 import {  Route, Routes } from 'react-router-dom'
-import Head from 'next/head'
 import Join from './pages/join'
 import Layout from './layout'
 import BusinessInfo from './pages/businessInfo'
@@ -7,13 +6,7 @@ import Privacy from './pages/privacy'
 import TermsofUse from './pages/termsofuse'
 import LoginMain from './pages/loginMain'
 import DetailInfo from './pages/detailInfo'
-import express from 'express'
-import bodyParser from 'body-parser';
-import path from 'path';
-
-
-class SessionApp {
-}
+import GroupBuying from './pages/groupbuying'
 
 function App() {
 
@@ -26,6 +19,7 @@ function App() {
       <Route path='/privacy' element={<Privacy />}/>
       <Route path='/termsofUse' element={<TermsofUse />}/>
       <Route path='/detailInfo' element={<DetailInfo />}/>
+      <Route path='/groupBuying' element={<GroupBuying />}/>
     </Routes>
   )
 }
