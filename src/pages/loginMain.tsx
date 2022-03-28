@@ -15,7 +15,7 @@ function LoginMain () {
   const [ID, setID] = useState("");
     const [password, setPassword] = useState("");
     const currentUser = useQuery<ICurrentUserData>(GET_CURRENT_USER);
-    const [login, loginResult] = useMutation<ILoginData, ILoginVars>(LOGIN);
+    const [login, loginResult] = useMutapoation<ILoginData, ILoginVars>(LOGIN);
   
     useEffect(() => {
       if (loginResult.data?.login) {
