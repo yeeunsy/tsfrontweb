@@ -24,7 +24,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import Menu from './menu'
-import Footer from './footer'
 import { BrowserRouter, Router } from 'react-router-dom'
 import './styles/index.css'
 import './styles/product.css'
@@ -49,7 +48,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Menu/>
       <App />
-      <Footer />
     </BrowserRouter>
   </React.StrictMode>
   </ApolloProvider>,

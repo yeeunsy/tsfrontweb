@@ -3,7 +3,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import itezFront_logo from "./img/itezFront_logo.png";
+import reminisce_logo from "./img/PV_unicorn_happy_edit.png";
 import { useQuery } from "@apollo/client";
 import { ICurrentUserData } from "./interfaces";
 import { GET_CURRENT_USER } from "./apollo/cache";
@@ -14,20 +14,9 @@ function Menu () {
 
     return (
         <header className="menuForm">
-            <Link to="/" className="logo"><img src={itezFront_logo}></img></Link>
+            <Link to="/" className="logo"><img src={reminisce_logo}></img></Link>
                 <ul className="mainMenu">
-                    <li className="menuHub"><Link to="/groupBuying" className="menuElm">공동 구매</Link></li>
-                    {user ? (
-                    <>
-                    <Link to="/logout">로그아웃</Link>{" "}
-                    <Link to={`/@${user.ID}`}>내 정보</Link>
-                    </>
-                ) : (
-                    <>
-                        <li className="menuHub"><Link to="/loginMain" className="menuElm">로그인</Link></li>
-                        <li className="menuHub"><Link to="/join" className="menuElm">회원가입</Link></li>
-                    </>
-                )}
+                    <li className="menuHub"><Link to="/discord" className="menuElm">Discord</Link></li>
                 </ul>
         </header> 
     );

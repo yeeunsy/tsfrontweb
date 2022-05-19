@@ -1,5 +1,5 @@
 /* @import url(a.css); */
-body {
+body, html {
   margin: 0 auto;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(85deg, #f5a6a6, #b8b5ff);
 }
 
 .loginForm, .joinForm{
